@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, Row } from 'react-bootstrap';
 import EmployeeData from './EmployeeData';
 
 
@@ -10,7 +11,12 @@ const EmployeeDataList = ({data}) => {
     });
     return (
         <div>
-            {employeeDataList}
+            <Container>
+                <Row>
+                   {employeeDataList} 
+                </Row>
+            </Container>
+            
         </div>
     );
 }
