@@ -6,13 +6,14 @@ class EmployeeDataForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
-      homeAddress: "",
-      jobRole: "",
-      currentSalary: "",
+      firstName: this.props.dataList.firstName || "",
+      lastName: this.props.dataList.lastName || "",
+      email: this.props.dataList.email || "",
+      phoneNumber: this.props.dataList.phoneNumber || "",
+      homeAddress: this.props.dataList.homeAddress || "",
+      jobRole: this.props.dataList.jobRole || "",
+      currentSalary: this.props.dataList.currentSalary || "",
+      id: props.dataList.id || "",
     };
   }
 
@@ -26,7 +27,7 @@ class EmployeeDataForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addData(this.state);
+    this.props.editData(this.state);
     this.setState({
       firstName: "",
       lastName: "",
@@ -119,7 +120,7 @@ class EmployeeDataForm extends Component {
         </Form.Group>
 
         <Button className="formSubmit" variant="primary" type="submit">
-          Submit
+          Save Changes
         </Button>
       </Form>
     );
