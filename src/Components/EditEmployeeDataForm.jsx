@@ -37,6 +37,7 @@ class EmployeeDataForm extends Component {
       jobRole: "",
       currentSalary: "",
     });
+    this.props.closeModal();
   };
 
   render() {
