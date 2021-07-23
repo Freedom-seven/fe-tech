@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {Col, Modal, Button} from "react-bootstrap";
-import EditEmployeeDataForm from './EditEmployeeDataForm'
+import EditEmployeeDataForm from './EditEmployeeDataForm';
+import './DisplayDetails.css';
 
 const EmployeeData = ({dataList, deleteData, editData}) => {
     const [show, setShow] = useState(false);
@@ -15,7 +16,8 @@ const EmployeeData = ({dataList, deleteData, editData}) => {
     return (
         <>
         <Col md="4">
-        <div>
+        <div className="display">
+            <h6 className="dispay-details" id="dispay-details" >Details</h6>
             <p>First Name: <strong>{dataList.firstName}</strong> </p>
             <p>Last Name: <strong>{dataList.lastName}</strong> </p>
             <p>Email: <strong>{dataList.email}</strong> </p>
