@@ -25,7 +25,7 @@ class App extends Component {
       <div>
         <Home />
         <EmployeeDataForm />
-        <EmployeeDataList />
+        <EmployeeDataList data={this.state.data} />
       </div>
     );
   }
