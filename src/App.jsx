@@ -13,10 +13,20 @@ class App extends Component {
           firstName: "Freedom",
           lastName: "Nanewortor",
           email: "freedom@email.com",
-          phoneNumber: "020000002",
+          phoneNumber: "020000007",
           homeAddress: "GX3000-04",
           jobRole: "Software Developer",
           currentSalary: "$10,000",
+          id: Math.random().toString()
+        },
+        {
+          firstName: "Emmanuel",
+          lastName: "Mensah",
+          email: "mensah@email.com",
+          phoneNumber: "020000002",
+          homeAddress: "GX4000-85",
+          jobRole: "Full Stack Developer",
+          currentSalary: "$12,000",
           id: Math.random().toString()
         },
       ],
@@ -29,6 +39,22 @@ class App extends Component {
       data: [...this.state.data, newEmployee],
     });
   };
+
+  handleDeleteData = (dataId) => {
+    const dataSaved = this.state.data.filter((dataList) => {
+      return dataList.id !== dataId;
+    });
+    this.setState({ data: dataSaved });
+  };
+
+  handleEditData = (updatedData) => {
+    this.setState({
+      data: this.state.data.map((dataList) =>
+        dataList.id === updatedData.id ? updatedData : dataList
+      ),
+    });
+  };
+
   render() {
     return (
       <>
@@ -40,7 +66,7 @@ class App extends Component {
                 <EmployeeDataForm addData={this.handleAddData} />
               </Col>
               <Col>
-                <EmployeeDataList data={this.state.data} />
+                <EmployeeDataList data={this.state.data} deleteData={this.handleDeleteData} editData={this.handleEditData} />
               </Col>
             </Row>
           </div>
