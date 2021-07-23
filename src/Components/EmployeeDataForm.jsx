@@ -26,7 +26,7 @@ class EmployeeDataForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    this.props.addData(this.state);
     this.setState({
       firstName: "",
       lastName: "",
