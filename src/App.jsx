@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import EmployeeDataForm from './Components/EmployeeDataForm';
-import EmployeeDataList from './Components/EmployeeDataList';
-import Home from './Components/Home';
+import React, { Component } from "react";
+import EmployeeDataForm from "./Components/EmployeeDataForm";
+import EmployeeDataList from "./Components/EmployeeDataList";
+import Home from "./Components/Home";
+import {Container, Row, Col} from "react-bootstrap";
 
 class App extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       data: [
         {
@@ -15,18 +16,36 @@ class App extends Component {
           phoneNumber: "020000002",
           homeAddress: "GX3000-04",
           jobRole: "Software Developer",
-          currentSalary: "$10,000"
-        }
-      ]
-    }
+          currentSalary: "$10,000",
+          id: Math.random().toString()
+        },
+      ],
+    };
   }
+  
+  handleAddData = (newEmployee) => {
+    newEmployee.id = Math.random().toString();
+    this.setState({
+      data: [...this.state.data, newEmployee],
+    });
+  };
   render() {
     return (
-      <div>
-        <Home />
-        <EmployeeDataForm />
-        <EmployeeDataList data={this.state.data} />
-      </div>
+      <>
+        <Container>
+          <div className="Container">
+            <Home />
+            <Row>
+              <Col sm="12" md="4" lg="4">
+                <EmployeeDataForm addData={this.handleAddData} />
+              </Col>
+              <Col>
+                <EmployeeDataList data={this.state.data} />
+              </Col>
+            </Row>
+          </div>
+        </Container>
+      </>
     );
   }
 }
