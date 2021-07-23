@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import EmployeeDataForm from './Components/EmployeeDataForm';
+import EmployeeDataList from './Components/EmployeeDataList';
+import Home from './Components/Home';
 
 class App extends Component {
   constructor (props) {
@@ -20,7 +23,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        
+        <Home />
+        <EmployeeDataForm />
+        <EmployeeDataList />
       </div>
     );
   }
