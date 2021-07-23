@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 
@@ -20,7 +18,7 @@ class EmployeeDataForm extends Component {
         }
     }
 
-    
+
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
