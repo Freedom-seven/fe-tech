@@ -1,70 +1,129 @@
-import React, { Component } from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-
-
+import React, { Component } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 class EmployeeDataForm extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-          firstName: "",
-          lastName: "",
-          email: "",
-          phoneNumber: "",
-          homeAddress: "",
-          jobRole: "",
-          currentSalary: ""
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      homeAddress: "",
+      jobRole: "",
+      currentSalary: "",
+    };
+  }
 
+  handleChange = (e) => {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
 
-    render() {
-        return (
-            <Form onSubmit={this.handleSubmit}>
-  
-    <Form.Group controlId="formGridFirstName">
-      <Form.Label>First Name</Form.Label>
-      <Form.Control type="First Name" value={this.state.firstName} onChange={this.handleChange} placeholder="Enter First Name" />
-    </Form.Group>
+    this.setState({ [name]:value });
+  }
 
-    <Form.Group controlId="formGridLastName">
-      <Form.Label>Last Name</Form.Label>
-      <Form.Control type="Last Name" value={this.state.lastName} onChange={this.handleChange}  placeholder="Enter Last Name" />
-    </Form.Group>
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+    this.setState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      homeAddress: "",
+      jobRole: "",
+      currentSalary: "",
+    });
+  };
 
-    <Form.Group controlId="formGridEmail">
-      <Form.Label>Email</Form.Label>
-      <Form.Control type="email" value={this.state.email} onChange={this.handleChange}  placeholder="Enter email" />
-    </Form.Group>
+  render() {
+    return (
+      <Form onSubmit={this.handleSubmit}>
+        <Form.Group className="mb-3 form" controlId="formGridFirstName">
+          <Form.Label className="formLabel">First Name:</Form.Label>
+          <Form.Control
+            type="firstName"
+            name="firstName"
+            value={this.state.firstName}
+            onChange={this.handleChange}
+            placeholder="Enter First Name"
+          />
+        </Form.Group>
 
-    <Form.Group controlId="formGridPhoneNUmber">
-      <Form.Label>Phone Number</Form.Label>
-      <Form.Control type="number" value={this.state.phoneNumber} onChange={this.handleChange}  placeholder="Enter Phone Nnmber" />
-    </Form.Group>
- 
+        <Form.Group className="mb-3" controlId="formGridLastName">
+          <Form.Label className="formLabel">Last Name:</Form.Label>
+          <Form.Control
+            type="lastName"
+            name="lastName"
+            value={this.state.lastName}
+            onChange={this.handleChange}
+            placeholder="Enter Last Name"
+          />
+        </Form.Group>
 
-  <Form.Group className="mb-3" controlId="formGridHomeAddress">
-    <Form.Label>Home Address</Form.Label>
-    <Form.Control type="home Address" value={this.state.homeAddress} onChange={this.handleChange}  placeholder="1234 Main St" />
-  </Form.Group>
+        <Form.Group className="mb-3" controlId="formGridEmail">
+          <Form.Label className="formLabel">Email:</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+            placeholder="Enter email"
+          />
+        </Form.Group>
 
-  <Form.Group className="mb-3" controlId="formGridJobRole">
-    <Form.Label>Job Role</Form.Label>
-    <Form.Control type="jobRole" value={this.state.jobRole} onChange={this.handleChange}  placeholder="Enter Job Role" />
-  </Form.Group>
+        <Form.Group className="mb-3" controlId="formGridPhoneNUmber">
+          <Form.Label className="formLabel">Phone Number:</Form.Label>
+          <Form.Control
+            type="number"
+            name="phoneNumber"
+            value={this.state.phoneNumber}
+            onChange={this.handleChange}
+            placeholder="Enter Phone Nnmber"
+          />
+        </Form.Group>
 
-  <Form.Group controlId="formGridCurrentSalary">
-      <Form.Label>Current Salary</Form.Label>
-      <Form.Control type="number" value={this.state.currentSalary} onChange={this.handleChange}  placeholder="Enter Current Salary" />
-    </Form.Group>
+        <Form.Group className="mb-3" controlId="formGridHomeAddress">
+          <Form.Label className="formLabel">Home Address:</Form.Label>
+          <Form.Control
+            type="homeAddress"
+            name="homeAddress"
+            value={this.state.homeAddress}
+            onChange={this.handleChange}
+            placeholder="1234 Main St"
+          />
+        </Form.Group>
 
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-        );
-    }
+        <Form.Group className="mb-3" controlId="formGridJobRole">
+          <Form.Label className="formLabel">Job Role:</Form.Label>
+          <Form.Control
+            type="text"
+            name="jobRole"
+            value={this.state.jobRole}
+            onChange={this.handleChange}
+            placeholder="Enter Job Role"
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formGridCurrentSalary">
+          <Form.Label className="formLabel">Current Salary:</Form.Label>
+          <Form.Control
+            type="text"
+            name="currentSalary"
+            value={this.state.currentSalary}
+            onChange={this.handleChange}
+            placeholder="Enter Current Salary"
+          />
+        </Form.Group>
+
+        <Button className="formSubmit" variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    );
+  }
 }
 
 export default EmployeeDataForm;
