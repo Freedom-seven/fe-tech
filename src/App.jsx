@@ -66,6 +66,7 @@ class App extends Component {
                 <EmployeeDataForm addData={this.handleAddData} />
               </Col>
               <Col>
+              <h3>Employee List</h3>
                 <EmployeeDataList data={this.state.data} deleteData={this.handleDeleteData} editData={this.handleEditData} />
               </Col>
             </Row>
