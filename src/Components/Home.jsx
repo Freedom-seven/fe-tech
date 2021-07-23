@@ -10,7 +10,6 @@ const home = () => {
         expand="lg"
         bg="dark"
         variant="dark"
-        className="navbar-home"
       >
         <Container>
           <Navbar.Brand href="#home">FE Tech</Navbar.Brand>
