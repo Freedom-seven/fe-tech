@@ -2,11 +2,15 @@ import React from 'react';
 import EmployeeData from './EmployeeData';
 
 
-const EmployeeDataList = () => {
+const EmployeeDataList = ({data}) => {
+    const employeeDataList = data.map((dataList) => {
+        return (
+            <EmployeeData dataList={dataList} />
+        );
+    });
     return (
         <div>
-            <h1>Employee Data List</h1>
-            <EmployeeData />
+            {employeeDataList}
         </div>
     );
 }
