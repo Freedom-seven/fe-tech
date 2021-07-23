@@ -12,15 +12,15 @@ const home = () => {
         variant="dark"
       >
         <Container>
-          <Navbar.Brand href="#home">FE Tech</Navbar.Brand>
+          <Navbar.Brand href="#home" id="home">FE Tech</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse
             className="justify-content-end"
             id="responsive-navbar-nav"
           >
             <Nav>
-              <Nav.Link href="#deets">Add Employee</Nav.Link>
-              <Nav.Link href="#pricing">View Employee List</Nav.Link>
+              <Nav.Link href="#froms">Add Employee</Nav.Link>
+              <Nav.Link href="#dispay-details">View Employee List</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -37,32 +37,6 @@ const home = () => {
         </p>
         <h3>OUR VISION</h3>
         <p>We will be the most valued business partner of all our customers.</p>
-        <h3>OUR VALUES</h3>
-        <p>
-          <span>* </span>
-          <i>Conduct business with integrity & fairness</i>
-          <br />
-
-          <span>* </span>
-          <i>Focus on our customer's needs</i>
-          <br />
-
-          <span>* </span>
-          <i>Continuously train our employees & improve our processes</i>
-          <br />
-
-          <span>* </span>
-          <i>Providequality products & services</i>
-          <br />
-
-          <span>* </span>
-          <i>Reward employees on merit & promote teamwork</i>
-          <br />
-
-          <span>* </span>
-          <i>Maintain safe & healthy working environment</i>
-          <br />
-        </p>
       </div>
     </>
   );
