@@ -1,0 +1,31 @@
+.home {
+    background-image: url(./image.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    margin: 2rem 0rem 10rem 0rem ;
+}
+
+.home h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bolder;
+    font-family: 'Merienda', cursive;
+}
+
+.home h3 {
+    text-align: center;
+    color: olive;
+    font-weight: bolder;
+    font-family: 'Merienda', cursive;
+}
+
+.home p {
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+}
+
+span {
+    color: rgb(6, 6, 128);
+}
