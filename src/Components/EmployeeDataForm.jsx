@@ -41,6 +41,7 @@ class EmployeeDataForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
+          <h4>Add Employee</h4>
         <Form.Group className="mb-3 form" controlId="formGridFirstName">
           <Form.Label className="formLabel">First Name:</Form.Label>
           <Form.Control
