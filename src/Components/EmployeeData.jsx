@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import {Col, Modal, Button} from "react-bootstrap";
 import EditEmployeeDataForm from './EditEmployeeDataForm'
 
-const EmployeeData = ({dataList}) => {
+const EmployeeData = ({dataList, deleteData, editData}) => {
     const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  
+  const handleDelete = (e) => {
+      deleteData(dataList.id);
+  }
 
     return (
         <>
@@ -22,8 +24,8 @@ const EmployeeData = ({dataList}) => {
             <p>Job Role: <strong>{dataList.jobRole}</strong> </p>
             <p>Current Salary: <strong>{dataList.currentSalary}</strong> </p>
 
-            <Button variant="success" onClick={handleShow} >Edit</Button>
-            <Button variant="danger" onClick={handleClose} >Delete</Button>
+            <Button variant="success" className="edit" onClick={handleShow} >Edit</Button>
+            <Button variant="danger" className="delete" onClick={handleDelete} >Delete</Button>
         </div>
         </Col>
 
@@ -32,7 +34,7 @@ const EmployeeData = ({dataList}) => {
           <Modal.Title>Edit Data</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <EditEmployeeDataForm />
+            <EditEmployeeDataForm dataList={dataList} editData={editData} />
         </Modal.Body>
       </Modal>
         
