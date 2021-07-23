@@ -34,7 +34,7 @@ const EmployeeData = ({dataList, deleteData, editData}) => {
           <Modal.Title>Edit Data</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <EditEmployeeDataForm dataList={dataList} editData={editData} />
+            <EditEmployeeDataForm dataList={dataList} editData={editData} closeModal={handleClose} />
         </Modal.Body>
       </Modal>
         
