@@ -3,6 +3,7 @@ import EmployeeDataForm from "./Components/EmployeeDataForm";
 import EmployeeDataList from "./Components/EmployeeDataList";
 import Home from "./Components/Home";
 import {Container, Row, Col} from "react-bootstrap";
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -59,15 +60,16 @@ class App extends Component {
     return (
       <>
         <Container>
-          <div className="Container">
+          <div className="app-container">
             <Home />
             <Row>
               <Col sm="12" md="4" lg="4">
+              <h3 style={{textAlign: "center"}}>Employee Form</h3>
                 <EmployeeDataForm addData={this.handleAddData} />
               </Col>
               <Col>
-              <h3>Employee List</h3>
-                <EmployeeDataList data={this.state.data} deleteData={this.handleDeleteData} editData={this.handleEditData} />
+              <h3 style={{textAlign: "center"}} className="details">Employee List</h3>
+                <EmployeeDataList data={this.state.data} deleteData={this.handleDeleteData} editData={this.handleEditData}  className="details" />
               </Col>
             </Row>
           </div>
